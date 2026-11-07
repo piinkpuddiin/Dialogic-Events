@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="DialogicStyle" format=3 uid="uid://cenm4s5trttmi"]
+
+[ext_resource type="Script" uid="uid://bwg6yncmh2cml" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="1_fl40a"]
+[ext_resource type="PackedScene" uid="uid://d04v5ij3hints" path="res://themes/side_dialogue/side_dialogue.tscn" id="2_c8htu"]
+[ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="3_uhc4o"]
+[ext_resource type="Script" uid="uid://dv08k6ljua6fm" path="res://addons/dialogic/Resources/dialogic_style.gd" id="4_k2eb3"]
+
+[sub_resource type="Resource" id="Resource_px5mi"]
+script = ExtResource("1_fl40a")
+
+[sub_resource type="Resource" id="Resource_2ggjc"]
+script = ExtResource("1_fl40a")
+scene = ExtResource("2_c8htu")
+
+[sub_resource type="Resource" id="Resource_fl40a"]
+script = ExtResource("1_fl40a")
+scene = ExtResource("3_uhc4o")
+
+[resource]
+script = ExtResource("4_k2eb3")
+name = "side_dialogue"
+layer_list = Array[String](["10", "11"])
+layer_info = {
+"": SubResource("Resource_px5mi"),
+"10": SubResource("Resource_2ggjc"),
+"11": SubResource("Resource_fl40a")
+}
+metadata/_latest_layer = "10"

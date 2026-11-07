@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://b8xe4x7lbn60m"]
+
+[ext_resource type="Script" uid="uid://yivwmkfwrvfr" path="res://addons/dialogic/Modules/DefaultLayoutParts/Base_Default/default_layout_base.gd" id="1_ifsho"]
+[ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn" id="2_lamdq"]
+[ext_resource type="PackedScene" uid="uid://cy1y14inwkplb" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Portraits/vn_portrait_layer.tscn" id="4_h8xem"]
+[ext_resource type="Script" uid="uid://dvvi87uimeikb" path="res://themes/next_page/textbox_layer.gd" id="5_2ra0b"]
+[ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="6_1dnc2"]
+[ext_resource type="Script" uid="uid://drhfq6rmdeuri" path="res://addons/dialogic/Modules/Text/node_dialog_text.gd" id="6_yyg1j"]
+[ext_resource type="Script" uid="uid://dpv2dfiv5dhmr" path="res://addons/dialogic/Modules/Text/node_type_sound.gd" id="7_aiq2t"]
+[ext_resource type="PackedScene" uid="uid://dsbwnp5hegnu3" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Glossary/glossary_popup_layer.tscn" id="10_thdt5"]
+[ext_resource type="PackedScene" uid="uid://dhk6j6eb6e3q" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.tscn" id="12_kp66k"]
+[ext_resource type="PackedScene" uid="uid://cvgf4c6gg0tsy" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.tscn" id="14_fi4o0"]
+[ext_resource type="PackedScene" uid="uid://lx24i8fl6uo" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_layer.tscn" id="16_6n1r2"]
+
+[node name="Custom" type="CanvasLayer" unique_id=1566697015]
+visible = false
+script = ExtResource("1_ifsho")
+
+[node name="BackgroundLayer" parent="." unique_id=301919803 instance=ExtResource("2_lamdq")]
+visible = false
+apply_overrides_on_ready = true
+
+[node name="VN_PortraitLayer" parent="." unique_id=456145911 instance=ExtResource("4_h8xem")]
+visible = false
+apply_overrides_on_ready = true
+
+[node name="FullAdvanceInputLayer" parent="." unique_id=954781565 instance=ExtResource("6_1dnc2")]
+visible = false
+apply_overrides_on_ready = true
+
+[node name="TextboxLayer" type="Node" parent="." unique_id=109577332 node_paths=PackedStringArray("message_list", "dialogic_text")]
+script = ExtResource("5_2ra0b")
+message_list = NodePath("Panel/MarginContainer/message_list_vbox")
+dialogic_text = NodePath("Panel/MarginContainer/message_list_vbox/DialogicNode_DialogText")
+metadata/_custom_type_script = "uid://c8d470kti274h"
+
+[node name="Panel" type="Panel" parent="TextboxLayer" unique_id=81183141]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -274.0
+offset_top = -359.0
+offset_right = 274.0
+offset_bottom = 359.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TextboxLayer/Panel" unique_id=581023632]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="message_list_vbox" type="VBoxContainer" parent="TextboxLayer/Panel/MarginContainer" unique_id=686286926]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="DialogicNode_DialogText" type="RichTextLabel" parent="TextboxLayer/Panel/MarginContainer/message_list_vbox" unique_id=498820658 node_paths=PackedStringArray("textbox_root")]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+fit_content = true
+script = ExtResource("6_yyg1j")
+textbox_root = NodePath(".")
+start_hidden = false
+metadata/_custom_type_script = "uid://drhfq6rmdeuri"
+
+[node name="DialogicNode_TypeSounds" type="AudioStreamPlayer" parent="TextboxLayer/Panel/MarginContainer/message_list_vbox/DialogicNode_DialogText" unique_id=865947710]
+script = ExtResource("7_aiq2t")
+metadata/_custom_type_script = "uid://dpv2dfiv5dhmr"
+
+[node name="Glossary" parent="." unique_id=1776298924 instance=ExtResource("10_thdt5")]
+visible = false
+apply_overrides_on_ready = true
+
+[node name="VN_ChoiceLayer" parent="." unique_id=638536378 instance=ExtResource("12_kp66k")]
+visible = false
+apply_overrides_on_ready = true
+
+[node name="TextInputLayer" parent="." unique_id=1508380395 instance=ExtResource("14_fi4o0")]
+visible = false
+apply_overrides_on_ready = true
+
+[node name="ExampleHistoryScene" parent="." unique_id=1238541410 instance=ExtResource("16_6n1r2")]
+visible = false
+apply_overrides_on_ready = true

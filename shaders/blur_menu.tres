@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://ch7kttg2030u8"]
+
+[sub_resource type="Shader" id="Shader_hov4l"]
+code = "shader_type canvas_item;
+
+uniform sampler2D screen_texture : hint_screen_texture, filter_linear_mipmap;
+uniform float amount : hint_range(0.0, 5.0);
+
+void fragment() {
+	vec4 color = textureLod(screen_texture, SCREEN_UV, amount);
+	COLOR = color;
+}
+"
+
+[resource]
+shader = SubResource("Shader_hov4l")
+shader_parameter/amount = 2.000000095

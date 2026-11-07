@@ -1,0 +1,205 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Dialogic Events"
+config/tags=PackedStringArray("dialogic", "in_progress", "visual_novel")
+run/main_scene="uid://cqe0rr5xegbbq"
+config/features=PackedStringArray("4.8", "Forward Plus")
+boot_splash/show_image=false
+boot_splash/stretch_mode=0
+config/icon="uid://dtj360di8r7ik"
+
+[autoload]
+
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+GlobalVar="*uid://dnrc6yw8g082t"
+
+[debug]
+
+gdscript/warnings/unused_signal=0
+
+[dialogic]
+
+directories/dch_directory={
+"mc": "res://characters/mc.dch",
+"n": "res://characters/n.dch",
+"npc": "res://characters/npc.dch"
+}
+directories/dtl_directory={
+"group_chat_timeline": "res://dialogue/group_chat_timeline.dtl",
+"next_page_timeline": "res://dialogue/next_page_timeline.dtl",
+"update_identifier_timeline": "res://dialogue/update_identifier_timeline.dtl"
+}
+layout/style_directory={
+"": "res://themes/next_page/moon_style.tres",
+"moon_style": "res://themes/next_page/moon_style.tres",
+"side_dialogue": "res://themes/side_dialogue/side_dialogue.tres",
+"smartphone": "res://themes/group_messages/smartphone.tres"
+}
+text/letter_speed=0.1
+text/initial_text_reveal_skippable=true
+text/text_reveal_skip_delay=0.1
+text/advance_delay=0.1
+text/autoadvance_per_character_delay=0.1
+text/autoadvance_ignored_characters_enabled=true
+animations/join_default_length=0.5
+animations/join_default_wait=true
+animations/leave_default_length=0.5
+animations/leave_default_wait=true
+animations/cross_fade_default_length=0.5
+choices/autofocus_first=true
+choices/delay=0.2
+choices/reveal_delay=0
+choices/reveal_by_input=false
+save/autosave_delay=60.0
+save/encryption_on_exports_only=true
+text/autopauses={}
+audio/channel_defaults={
+"": {
+"audio_bus": "",
+"fade_length": 0.0,
+"loop": false,
+"volume": 0.0
+},
+"music": {
+"audio_bus": "",
+"fade_length": 0.0,
+"loop": true,
+"volume": 0.0
+}
+}
+layout/style_list=["res://themes/next_page/moon_style.tres", "res://themes/group_messages/smartphone.tres", "res://themes/side_dialogue/side_dialogue.tres"]
+layout/default_style="res://themes/next_page/moon_style.tres"
+glossary/default_case_sensitive=true
+variables={}
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://addons/dialogic_additions/EmojiReaction/": "orange",
+"res://addons/dialogic_additions/ImageMessage/": "orange",
+"res://addons/dialogic_additions/NextPage/": "teal",
+"res://addons/dialogic_additions/UpdateIdentifier/": "pink",
+"res://images/bg/": "pink",
+"res://images/group_message/": "orange",
+"res://images/mini-portrait/": "pink",
+"res://scenes/group_messages/": "orange",
+"res://scenes/side_dialogue/": "pink",
+"res://themes/group_messages/": "orange",
+"res://themes/next_page/": "teal",
+"res://themes/side_dialogue/": "pink"
+}
+
+[input]
+
+dialogic_default_action={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,
+"resource_local_to_scene": false,
+"resource_name": "",
+"device": 16,
+"window_id": 0,
+"alt_pressed": false,
+"shift_pressed": false,
+"ctrl_pressed": false,
+"meta_pressed": false,
+"pressed": false,
+"keycode": 4194309,
+"physical_keycode": 0,
+"key_label": 0,
+"unicode": 0,
+"location": 0,
+"echo": false,
+"script": null
+), Object(InputEventMouseButton,
+"resource_local_to_scene": false,
+"resource_name": "",
+"device": -1,
+"window_id": 0,
+"alt_pressed": false,
+"shift_pressed": false,
+"ctrl_pressed": false,
+"meta_pressed": false,
+"button_mask": 0,
+"position": Vector2(0, 0),
+"global_position": Vector2(0, 0),
+"factor": 1.0,
+"button_index": 1,
+"canceled": false,
+"pressed": true,
+"double_click": false,
+"script": null
+), Object(InputEventKey,
+"resource_local_to_scene": false,
+"resource_name": "",
+"device": 16,
+"window_id": 0,
+"alt_pressed": false,
+"shift_pressed": false,
+"ctrl_pressed": false,
+"meta_pressed": false,
+"pressed": false,
+"keycode": 32,
+"physical_keycode": 0,
+"key_label": 0,
+"unicode": 0,
+"location": 0,
+"echo": false,
+"script": null
+), Object(InputEventKey,
+"resource_local_to_scene": false,
+"resource_name": "",
+"device": 16,
+"window_id": 0,
+"alt_pressed": false,
+"shift_pressed": false,
+"ctrl_pressed": false,
+"meta_pressed": false,
+"pressed": false,
+"keycode": 88,
+"physical_keycode": 0,
+"key_label": 0,
+"unicode": 0,
+"location": 0,
+"echo": false,
+"script": null
+), Object(InputEventJoypadButton,
+"resource_local_to_scene": false,
+"resource_name": "",
+"device": 0,
+"button_index": 0,
+"pressure": 0.0,
+"pressed": false,
+"script": null
+)]
+}
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"

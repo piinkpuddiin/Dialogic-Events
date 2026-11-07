@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://dfu5sykqkqmam"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kol6c"]
+content_margin_left = 11.0
+content_margin_top = 9.0
+content_margin_right = 11.0
+content_margin_bottom = 9.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.6627451, 0.54901963, 1, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="NewMessageGroupChat" type="RichTextLabel" unique_id=1376210683]
+custom_minimum_size = Vector2(45, 10)
+custom_maximum_size = Vector2(370, 560)
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 460.0
+offset_bottom = 38.0
+theme_override_colors/default_color = Color(0.029506557, 0.029506557, 0.029506557, 1)
+theme_override_font_sizes/normal_font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_kol6c")
+bbcode_enabled = true
+text = "Lorem ipsum dolor sit amet,"
+fit_content = true
+scroll_following = true
+
+[node name="time_label" type="Label" parent="." unique_id=762755834]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "12:48"

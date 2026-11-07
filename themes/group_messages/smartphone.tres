@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="DialogicStyle" format=3 uid="uid://bjtphupkj0o3v"]
+
+[ext_resource type="Script" uid="uid://bwg6yncmh2cml" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="1_xs8ci"]
+[ext_resource type="PackedScene" uid="uid://c0c0bjn3k3rip" path="res://themes/group_messages/group_chat.tscn" id="2_xs8ci"]
+[ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="3_o2l05"]
+[ext_resource type="Script" uid="uid://dv08k6ljua6fm" path="res://addons/dialogic/Resources/dialogic_style.gd" id="3_ono1k"]
+
+[sub_resource type="Resource" id="Resource_pvlsg"]
+script = ExtResource("1_xs8ci")
+
+[sub_resource type="Resource" id="Resource_o2l05"]
+script = ExtResource("1_xs8ci")
+scene = ExtResource("2_xs8ci")
+
+[sub_resource type="Resource" id="Resource_esdd3"]
+script = ExtResource("1_xs8ci")
+scene = ExtResource("3_o2l05")
+
+[resource]
+script = ExtResource("3_ono1k")
+name = "smartphone"
+layer_list = Array[String](["10", "11"])
+layer_info = {
+"": SubResource("Resource_pvlsg"),
+"10": SubResource("Resource_o2l05"),
+"11": SubResource("Resource_esdd3")
+}
+metadata/_latest_layer = "11"

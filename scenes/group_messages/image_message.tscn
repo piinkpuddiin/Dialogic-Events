@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cs0c2600cb3f7"]
+
+[ext_resource type="Texture2D" uid="uid://bvju7x7m5egxf" path="res://images/group_message/cloud_study__stormy_sunset_1998.20.1.jpg" id="1_jgfwb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3fk7r"]
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Panel" type="Panel" unique_id=755786486]
+clip_children = 2
+custom_minimum_size = Vector2(200, 200)
+clip_contents = true
+offset_right = 200.0
+offset_bottom = 200.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3fk7r")
+
+[node name="Image" type="TextureRect" parent="." unique_id=154738875]
+layout_mode = 0
+offset_right = 351.0
+offset_bottom = 354.0
+texture = ExtResource("1_jgfwb")
+expand_mode = 5
+stretch_mode = 4

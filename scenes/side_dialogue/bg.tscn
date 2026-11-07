@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://crrxf376x0pqf"]
+
+[ext_resource type="Script" uid="uid://mcwsr1ojdsua" path="res://scripts/bg.gd" id="1_obsad"]
+[ext_resource type="Texture2D" uid="uid://df1p7frklnc4" path="res://images/mini-portrait/frame.png" id="2_obsad"]
+[ext_resource type="Texture2D" uid="uid://dfcv35byajtuk" path="res://images/bg/bg_swamp.png" id="2_x7cr4"]
+[ext_resource type="Texture2D" uid="uid://dy078bnb7nad5" path="res://images/mini-portrait/n.png" id="3_x7cr4"]
+[ext_resource type="Texture2D" uid="uid://drfa2euxo5kh5" path="res://images/mini-portrait/mc.png" id="5_x7cr4"]
+
+[node name="BG" type="Control" unique_id=85446446 node_paths=PackedStringArray("bg_color", "bg_texture", "top_portrait", "bottom_portrait", "portait_text_bottom", "portrait_text_top")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_obsad")
+bg_color = NodePath("HBoxContainer/background_color")
+bg_texture = NodePath("HBoxContainer/background_texture")
+top_portrait = NodePath("HBoxContainer/background_color/VBoxContainer/TopPortrait")
+bottom_portrait = NodePath("HBoxContainer/background_color/VBoxContainer/BottomPortrait")
+portait_text_bottom = NodePath("HBoxContainer/background_color/VBoxContainer/BottomPortrait/portait_text")
+portrait_text_top = NodePath("HBoxContainer/background_color/VBoxContainer/TopPortrait/portrait_text")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1536988323]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="background_texture" type="TextureRect" parent="HBoxContainer" unique_id=1943724728]
+layout_mode = 2
+texture = ExtResource("2_x7cr4")
+
+[node name="background_color" type="ColorRect" parent="HBoxContainer" unique_id=809394959]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.08627451, 0.101960786, 0.20784314, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/background_color" unique_id=778781373]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopPortrait" type="Control" parent="HBoxContainer/background_color/VBoxContainer" unique_id=944641244]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -143.685)
+offset_transform_scale = Vector2(0.7, 0.7)
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="frame" type="TextureRect" parent="HBoxContainer/background_color/VBoxContainer/TopPortrait" unique_id=1880193574]
+self_modulate = Color(0.8292632, 0.85252845, 0.9459227, 0.8)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -478.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_obsad")
+
+[node name="portrait_text" type="TextureRect" parent="HBoxContainer/background_color/VBoxContainer/TopPortrait" unique_id=352005264]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -700.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("3_x7cr4")
+
+[node name="BottomPortrait" type="Control" parent="HBoxContainer/background_color/VBoxContainer" unique_id=600293911]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -159.794)
+offset_transform_scale = Vector2(0.7, 0.7)
+
+[node name="frame" type="TextureRect" parent="HBoxContainer/background_color/VBoxContainer/BottomPortrait" unique_id=691611798]
+self_modulate = Color(0.8292632, 0.85252845, 0.9459227, 0.8)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -478.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_obsad")
+
+[node name="portait_text" type="TextureRect" parent="HBoxContainer/background_color/VBoxContainer/BottomPortrait" unique_id=1430553785]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -700.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("5_x7cr4")

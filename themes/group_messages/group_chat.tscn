@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://c0c0bjn3k3rip"]
+
+[ext_resource type="Script" uid="uid://jtuckaes4r0o" path="res://themes/group_messages/dialogic_message.gd" id="1_brhxs"]
+[ext_resource type="Script" uid="uid://drhfq6rmdeuri" path="res://addons/dialogic/Modules/Text/node_dialog_text.gd" id="2_tsecs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ihqcy"]
+
+[node name="DialogicLayoutLayer_MessageChat" type="Node" unique_id=2247279]
+script = ExtResource("1_brhxs")
+metadata/_custom_type_script = "uid://c8d470kti274h"
+
+[node name="Panel" type="Panel" parent="." unique_id=1125765662]
+self_modulate = Color(1, 1, 1, 0.5058824)
+anchors_preset = -1
+anchor_left = 0.2734375
+anchor_top = 0.058641974
+anchor_right = 0.7526042
+anchor_bottom = 0.93950605
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ihqcy")
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=148323722]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.13043478
+anchor_right = 0.8695652
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+metadata/_edit_use_anchors_ = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/MarginContainer" unique_id=1128235594]
+unique_name_in_owner = true
+layout_mode = 2
+vertical_scroll_mode = 3
+
+[node name="MessageList" type="VBoxContainer" parent="Panel/MarginContainer/ScrollContainer" unique_id=887573023]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="DialogicNode_DialogText" type="RichTextLabel" parent="Panel/MarginContainer/ScrollContainer/MessageList" unique_id=1348564658 node_paths=PackedStringArray("textbox_root")]
+unique_name_in_owner = true
+layout_mode = 2
+bbcode_enabled = true
+text = "Lorem ipsum"
+script = ExtResource("2_tsecs")
+textbox_root = NodePath(".")
+metadata/_custom_type_script = "uid://drhfq6rmdeuri"
+
+[node name="time_label" type="Label" parent="Panel/MarginContainer/ScrollContainer/MessageList/DialogicNode_DialogText" unique_id=1384174081]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 20.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=380181331]
+unique_name_in_owner = true
+volume_db = -50.0
+
+[connection signal="finished_revealing_text" from="Panel/MarginContainer/ScrollContainer/MessageList/DialogicNode_DialogText" to="." method="_on_dialogic_node_dialog_text_finished_revealing_text"]
+[connection signal="started_revealing_text" from="Panel/MarginContainer/ScrollContainer/MessageList/DialogicNode_DialogText" to="." method="_on_dialogic_node_dialog_text_started_revealing_text"]
