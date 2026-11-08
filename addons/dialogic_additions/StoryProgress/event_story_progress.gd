@@ -7,7 +7,7 @@ var amount: int
 func _execute() -> void:
 	GlobalVar.story_progress += amount
 	GlobalVar.dialogue_label = Dialogic.Jump.get_last_label_identifier()
-	GlobalVar.story_progressed.emit()
+	GlobalVar.story_progressed.emit(amount)
 	finish()
 
 

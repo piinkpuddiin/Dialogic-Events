@@ -36,23 +36,23 @@ func add_message(_text:String) -> void:
 	
 	var font: Font = dialogic_text.get_theme_font("normal_font", 'RichtTextLabel')
 	# NOTE: Check the font size matches with the textbox font size
-	var string_size: Vector2 = font.get_string_size(_text, HorizontalAlignment.HORIZONTAL_ALIGNMENT_LEFT, -1, 24)
-	
+	var string_size: Vector2 = font.get_string_size(_text, HorizontalAlignment.HORIZONTAL_ALIGNMENT_LEFT, -1, 32)
 	var max_width: int = int(message_list.size.x)
-	
 	var smallest_line_amount := -1
 	
 	for i in range(1,10):
-		if string_size.x/i+150 > max_width: 
-			# The number controls the maximum amount of space horizontally
+		if string_size.x/i+100 > max_width: 
+			# The number controls the maximum amount of space
+			# horizontally between each paragraph.
 			continue
 		else:
 			smallest_line_amount = i
 			break
 	
+	text_node.bbcode_enabled = true
 	text_node.custom_minimum_size = Vector2(300, smallest_line_amount * string_size.y) # ATTENTION
 	text_node.text = _text
-	text_node.add_theme_font_size_override("normal_font_size", 24)
+	text_node.add_theme_font_size_override("normal_font_size", 32)
 	
 	message_list.add_child(text_node)
 	message_list.move_child(dialogic_text,-1)

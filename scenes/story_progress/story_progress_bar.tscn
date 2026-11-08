@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://01y526innday"]
+
+[ext_resource type="Theme" uid="uid://bbumbyhbb367r" path="res://themes/base_theme.tres" id="1_au0nk"]
+[ext_resource type="Script" uid="uid://crkaqr7g3mpsc" path="res://scripts/story_progress_bar.gd" id="1_lu14t"]
+[ext_resource type="Script" uid="uid://u3o3pypql5r" path="res://scripts/anim_progress_bar.gd" id="2_cfwyl"]
+
+[node name="StoryProgressBar" type="Control" unique_id=1985815879 node_paths=PackedStringArray("progress_bar")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_au0nk")
+script = ExtResource("1_lu14t")
+progress_bar = NodePath("ProgressBar")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=472696541]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 27.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+script = ExtResource("2_cfwyl")

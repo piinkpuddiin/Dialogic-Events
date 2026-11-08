@@ -1,5 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://bbumbyhbb367r"]
 
+[ext_resource type="FontFile" uid="uid://bhjj3qpajmxps" path="res://fonts/helvetica/HelveticaNeueBold.ttf" id="1_rxnwj"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jyhfs"]
 content_margin_left = 15.0
 content_margin_top = 5.0
@@ -40,10 +42,10 @@ corner_radius_bottom_right = 18
 corner_radius_bottom_left = 18
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bi1ct"]
-content_margin_left = 18.0
-content_margin_top = 9.0
-content_margin_right = 18.0
-content_margin_bottom = 9.0
+content_margin_left = 27.0
+content_margin_top = 18.0
+content_margin_right = 27.0
+content_margin_bottom = 18.0
 bg_color = Color(0.1111969, 0.11119684, 0.11119681, 1)
 corner_radius_top_left = 18
 corner_radius_top_right = 18
@@ -101,21 +103,11 @@ _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\">
 "
 base_scale = 2.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjs24"]
-content_margin_left = 18.0
-content_margin_top = 18.0
-content_margin_right = 18.0
-content_margin_bottom = 18.0
-bg_color = Color(0, 0, 0, 0.6666667)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ts8gp"]
+bg_color = Color(0.039215688, 0.039215688, 0.039215688, 0.16862746)
 
-[sub_resource type="StyleBox" id="StyleBox_j2tpo"]
-resource_local_to_scene = false
-resource_name = ""
-content_margin_left = 10.0
-content_margin_top = 10.0
-content_margin_right = 10.0
-content_margin_bottom = 10.0
-metadata/_custom_type_script = "uid://bkl6g25jwb47h"
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w2k3h"]
+bg_color = Color(0.8235294, 0.14117648, 0.34901962, 1)
 
 [resource]
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
@@ -135,7 +127,7 @@ Button/constants/align_to_largest_stylebox = 0
 Button/constants/h_separation = 4
 Button/constants/icon_max_width = 0
 Button/constants/outline_size = 0
-Button/font_sizes/font_size = 32
+Button/font_sizes/font_size = 44
 Button/styles/disabled = SubResource("StyleBoxFlat_jyhfs")
 Button/styles/focus = SubResource("StyleBoxFlat_pr8he")
 Button/styles/hover = SubResource("StyleBoxFlat_vbrbg")
@@ -150,10 +142,11 @@ CheckButton/icons/unchecked = SubResource("DPITexture_kna62")
 CheckButton/icons/unchecked_disabled = SubResource("DPITexture_oe4l6")
 CheckButton/icons/unchecked_disabled_mirrored = SubResource("DPITexture_vpybx")
 CheckButton/icons/unchecked_mirrored = SubResource("DPITexture_ma636")
-HSlider/styles/slider = null
+HBoxContainer/constants/separation = 12
 OptionButton/font_sizes/font_size = 56
-OptionButton/styles/normal = SubResource("StyleBoxFlat_gjs24")
 PopupMenu/font_sizes/font_size = 45
-RichTextLabel/font_sizes/normal_font_size = 32
-RichTextLabel/styles/normal = SubResource("StyleBox_j2tpo")
-VBoxContainer/constants/separation = 9
+ProgressBar/styles/background = SubResource("StyleBoxFlat_ts8gp")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_w2k3h")
+RichTextLabel/font_sizes/normal_font_size = 75
+RichTextLabel/fonts/bold_font = ExtResource("1_rxnwj")
+VBoxContainer/constants/separation = 10

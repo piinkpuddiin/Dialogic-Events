@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://dsjjsiow6bkhh"]
+
+[ext_resource type="Theme" uid="uid://bbumbyhbb367r" path="res://themes/base_theme.tres" id="1_7xq7n"]
+[ext_resource type="Script" uid="uid://ckelyclfm1uqv" path="res://scripts/events_menu.gd" id="2_gad2n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sregf"]
+bg_color = Color(0.003921569, 0.003921569, 0.003921569, 0.627451)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="EventsMenu" type="Control" unique_id=121621401]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_7xq7n")
+script = ExtResource("2_gad2n")
+
+[node name="Panel" type="Panel" parent="." unique_id=212411238]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="menu_panel" type="Panel" parent="Panel" unique_id=2046598354]
+custom_minimum_size = Vector2(1000, 340)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -536.0
+offset_top = -179.0
+offset_right = 536.0
+offset_bottom = 179.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sregf")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/menu_panel" unique_id=361719453]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/menu_panel/MarginContainer" unique_id=642226587]
+layout_mode = 2
+
+[node name="dialogic_events_label" type="RichTextLabel" parent="Panel/menu_panel/MarginContainer/VBoxContainer" unique_id=231438223]
+layout_mode = 2
+size_flags_horizontal = 4
+bbcode_enabled = true
+text = "[b]Dialogic Events"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Control" type="Control" parent="Panel/menu_panel/MarginContainer/VBoxContainer" unique_id=2016076153]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/menu_panel/MarginContainer/VBoxContainer" unique_id=1245565741]
+layout_mode = 2
+
+[node name="phone_events_button" type="Button" parent="Panel/menu_panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=740717923]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Phone Events"
+
+[node name="next_page_button" type="Button" parent="Panel/menu_panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=2123871155]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Next Page"
+
+[node name="update_textbox_button" type="Button" parent="Panel/menu_panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=274703948]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Update Textbox ID"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/menu_panel/MarginContainer/VBoxContainer" unique_id=2051888982]
+layout_mode = 2
+
+[node name="story_progress_button" type="Button" parent="Panel/menu_panel/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=627986095]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Story Progress"
+
+[connection signal="pressed" from="Panel/menu_panel/MarginContainer/VBoxContainer/HBoxContainer/phone_events_button" to="." method="_on_phone_events_button_pressed"]
+[connection signal="pressed" from="Panel/menu_panel/MarginContainer/VBoxContainer/HBoxContainer/next_page_button" to="." method="_on_next_page_button_pressed"]
+[connection signal="pressed" from="Panel/menu_panel/MarginContainer/VBoxContainer/HBoxContainer/update_textbox_button" to="." method="_on_update_textbox_button_pressed"]
+[connection signal="pressed" from="Panel/menu_panel/MarginContainer/VBoxContainer/HBoxContainer2/story_progress_button" to="." method="_on_story_progress_button_pressed"]

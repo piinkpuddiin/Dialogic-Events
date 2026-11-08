@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://cu37avkosg5rv"]
+
+[ext_resource type="Script" uid="uid://dvvi87uimeikb" path="res://themes/next_page/textbox_layer.gd" id="1_exvm8"]
+[ext_resource type="Material" uid="uid://ch7kttg2030u8" path="res://shaders/blur_menu.tres" id="2_23ai2"]
+[ext_resource type="Script" uid="uid://drhfq6rmdeuri" path="res://addons/dialogic/Modules/Text/node_dialog_text.gd" id="3_e2us3"]
+[ext_resource type="Script" uid="uid://dpv2dfiv5dhmr" path="res://addons/dialogic/Modules/Text/node_type_sound.gd" id="4_dlee3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r0cqv"]
+bg_color = Color(0.023529412, 0.023529412, 0.023529412, 0.78431374)
+
+[node name="TextboxLayer" type="Node" unique_id=744612134 node_paths=PackedStringArray("message_list", "dialogic_text")]
+script = ExtResource("1_exvm8")
+message_list = NodePath("Panel/MarginContainer/message_list_vbox")
+dialogic_text = NodePath("Panel/MarginContainer/message_list_vbox/DialogicNode_DialogText")
+metadata/_custom_type_script = "uid://c8d470kti274h"
+
+[node name="blur_color_rect" type="ColorRect" parent="." unique_id=110068155]
+material = ExtResource("2_23ai2")
+anchors_preset = -1
+anchor_left = 0.35729167
+anchor_top = 0.1675926
+anchor_right = 0.64166665
+anchor_bottom = 0.82870364
+offset_top = -1.5258789e-05
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="." unique_id=1199462870]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -274.0
+offset_top = -359.0
+offset_right = 274.0
+offset_bottom = 359.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_r0cqv")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=639621165]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="message_list_vbox" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=1353787232]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="DialogicNode_DialogText" type="RichTextLabel" parent="Panel/MarginContainer/message_list_vbox" unique_id=1794133945 node_paths=PackedStringArray("textbox_root")]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+fit_content = true
+script = ExtResource("3_e2us3")
+textbox_root = NodePath(".")
+start_hidden = false
+metadata/_custom_type_script = "uid://drhfq6rmdeuri"
+
+[node name="DialogicNode_TypeSounds" type="AudioStreamPlayer" parent="Panel/MarginContainer/message_list_vbox/DialogicNode_DialogText" unique_id=1721448592]
+script = ExtResource("4_dlee3")
+metadata/_custom_type_script = "uid://dpv2dfiv5dhmr"

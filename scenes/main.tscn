@@ -1,75 +1,27 @@
 [gd_scene format=3 uid="uid://cqe0rr5xegbbq"]
 
-[ext_resource type="Script" uid="uid://ckelyclfm1uqv" path="res://scripts/main.gd" id="1_sugp2"]
-[ext_resource type="Theme" uid="uid://bbumbyhbb367r" path="res://themes/placeholder_theme.tres" id="2_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://dsjjsiow6bkhh" path="res://scenes/events_menu.tscn" id="1_0wfyh"]
+[ext_resource type="Texture2D" uid="uid://d4eixeyix7vni" path="res://images/bg/bg_city.png" id="1_sugp2"]
 [ext_resource type="Script" uid="uid://kksyx53kcvcs" path="res://scripts/dialogue.gd" id="3_tbgi4"]
 
 [node name="Main" type="Node" unique_id=752722185]
-script = ExtResource("1_sugp2")
 
-[node name="EventsMenu" type="Control" parent="." unique_id=1248132802]
+[node name="background_texture" type="TextureRect" parent="." unique_id=1492539782]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_sugp2")
+
+[node name="EventsMenu" parent="." unique_id=121621401 node_paths=PackedStringArray("dialogue") instance=ExtResource("1_0wfyh")]
 unique_name_in_owner = true
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("2_jyhfs")
+dialogue = NodePath("../Dialogue")
 
-[node name="Panel" type="Panel" parent="EventsMenu" unique_id=1233945359]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="EventsMenu/Panel" unique_id=1983634996]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -384.0
-offset_top = -68.5
-offset_right = 384.0
-offset_bottom = 68.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="RichTextLabel" type="RichTextLabel" parent="EventsMenu/Panel/VBoxContainer" unique_id=2129566561]
-layout_mode = 2
-size_flags_horizontal = 4
-bbcode_enabled = true
-text = "Dialogic Events"
-fit_content = true
-autowrap_mode = 0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="EventsMenu/Panel/VBoxContainer" unique_id=154306819]
-layout_mode = 2
-
-[node name="phone_events_button" type="Button" parent="EventsMenu/Panel/VBoxContainer/HBoxContainer" unique_id=528665486]
-layout_mode = 2
-text = "Phone Events"
-
-[node name="next_page_button" type="Button" parent="EventsMenu/Panel/VBoxContainer/HBoxContainer" unique_id=1853344190]
-layout_mode = 2
-text = "Next Page"
-
-[node name="update_textbox_button" type="Button" parent="EventsMenu/Panel/VBoxContainer/HBoxContainer" unique_id=458784749]
-layout_mode = 2
-text = "Update Textbox ID"
-
-[node name="Dialogue" type="Control" parent="." unique_id=1260944924]
+[node name="Dialogue" type="Control" parent="." unique_id=1260944924 node_paths=PackedStringArray("events_menu")]
 unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+mouse_filter = 2
 script = ExtResource("3_tbgi4")
-
-[connection signal="pressed" from="EventsMenu/Panel/VBoxContainer/HBoxContainer/phone_events_button" to="." method="_on_phone_events_button_pressed"]
-[connection signal="pressed" from="EventsMenu/Panel/VBoxContainer/HBoxContainer/next_page_button" to="." method="_on_next_page_button_pressed"]
-[connection signal="pressed" from="EventsMenu/Panel/VBoxContainer/HBoxContainer/update_textbox_button" to="." method="_on_update_textbox_button_pressed"]
+events_menu = NodePath("../EventsMenu")

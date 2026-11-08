@@ -3,12 +3,14 @@ extends DialogicEvent
 class_name DialogicEmojiReactionEvent
 
 var emoji: String
-var amount: int # How many users liked the text
+var amount: int # How long until the emoji appears
+#var amount: int # How many users liked the text
 
 func _execute() -> void:
 	if amount == 0:
 		# Randomize the amount if it's empty
 		amount = randi_range(0.5, 2.5)
+		print("No amount set, new amount: ", amount)
 	GlobalVar.emoji_react.emit(emoji, amount)
 	finish() # called to continue with the next event
 

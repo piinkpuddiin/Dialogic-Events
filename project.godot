@@ -35,14 +35,16 @@ directories/dch_directory={
 "npc": "res://characters/npc.dch"
 }
 directories/dtl_directory={
-"group_chat_timeline": "res://dialogue/group_chat_timeline.dtl",
+"group_chat_timeline": "res://dialogue/group_message_timeline.dtl",
 "next_page_timeline": "res://dialogue/next_page_timeline.dtl",
-"update_identifier_timeline": "res://dialogue/update_identifier_timeline.dtl"
+"story_progress_timeline": "res://dialogue/story_progress_timeline.dtl",
+"update_identifier_timeline": "res://dialogue/update_id_timeline.dtl"
 }
 layout/style_directory={
-"": "res://themes/next_page/moon_style.tres",
+"": "res://themes/simple/simple.tres",
 "moon_style": "res://themes/next_page/moon_style.tres",
 "side_dialogue": "res://themes/side_dialogue/side_dialogue.tres",
+"simple": "res://themes/simple/simple.tres",
 "smartphone": "res://themes/group_messages/smartphone.tres"
 }
 text/letter_speed=0.1
@@ -77,8 +79,8 @@ audio/channel_defaults={
 "volume": 0.0
 }
 }
-layout/style_list=["res://themes/next_page/moon_style.tres", "res://themes/group_messages/smartphone.tres", "res://themes/side_dialogue/side_dialogue.tres"]
-layout/default_style="res://themes/next_page/moon_style.tres"
+layout/style_list=["res://themes/next_page/moon_style.tres", "res://themes/group_messages/smartphone.tres", "res://themes/side_dialogue/side_dialogue.tres", "res://themes/simple/simple.tres"]
+layout/default_style="res://themes/simple/simple.tres"
 glossary/default_case_sensitive=true
 variables={}
 
@@ -107,10 +109,12 @@ folder_colors={
 "res://images/mini-portrait/": "pink",
 "res://scenes/group_messages/": "orange",
 "res://scenes/side_dialogue/": "pink",
-"res://themes/group_messages/": "orange",
-"res://themes/next_page/": "teal",
-"res://themes/side_dialogue/": "pink"
+"res://scenes/story_progress/": "blue"
 }
+
+[gui]
+
+theme/custom_font="uid://cvwr22pq48tjr"
 
 [input]
 

@@ -173,13 +173,14 @@ func add_message(text:String, speaker_name:String, _time:String) -> void:
 
 
 #region IMAGES
-func add_reaction(reaction, _amount):
+func add_reaction(reaction, amount):
 	var message = message_list.get_child(-1)
 	var reaction_message: RichTextLabel = load(reaction_label).instantiate()
 	var extra_space = Control.new()
 	
 	reaction_message.text = reaction
 	message.set_meta('reaction', true)
+	await get_tree().create_timer(amount).timeout
 	
 	if message.get_child(0).has_meta('speaker'):
 		if message.get_child(0).get_meta('speaker') == "mc":

@@ -1,0 +1,13 @@
+mc: This is the beginning of the timeline.
+[story_progress amount="25"]
+n: The second sentence.
+mc: Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+[story_progress amount="25"]
+n: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+npc: Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium...
+[story_progress amount="25"]
+npc: ...totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+n: This is the end of the timeline.
+[story_progress amount="25"]
+n: The end.
+[end_timeline]

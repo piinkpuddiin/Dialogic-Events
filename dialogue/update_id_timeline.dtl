@@ -1,0 +1,11 @@
+[update_identifier]
+mc: This is the beginning of the timeline.
+n: Ut enim ad minim veniam...
+npc: Duis aute irure dolor!
+[update_identifier]
+npc: Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam...
+mc: Eaque ipsa quae ab [...] sunt explicabo.
+n: This is the last sentence before the end.
+[update_identifier]
+n: This is the end of the timeline.
+[end_timeline]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgfrekf0hyhnh"
-path="res://.godot/imported/forest_swamp.png-4241f4c07c126593d771fad9125a45bf.ctex"
+uid="uid://d4eixeyix7vni"
+path="res://.godot/imported/bg_city.png-d1d853b2ae35e580a878abcafe42ebf4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/bg/forest_swamp.png"
-dest_files=["res://.godot/imported/forest_swamp.png-4241f4c07c126593d771fad9125a45bf.ctex"]
+source_file="res://images/bg/bg_city.png"
+dest_files=["res://.godot/imported/bg_city.png-d1d853b2ae35e580a878abcafe42ebf4.ctex"]
 
 [params]
 

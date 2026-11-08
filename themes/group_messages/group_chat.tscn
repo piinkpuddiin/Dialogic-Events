@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c0c0bjn3k3rip"]
 
 [ext_resource type="Script" uid="uid://jtuckaes4r0o" path="res://themes/group_messages/dialogic_message.gd" id="1_brhxs"]
+[ext_resource type="Material" uid="uid://ch7kttg2030u8" path="res://shaders/blur_menu.tres" id="2_sx1gb"]
 [ext_resource type="Script" uid="uid://drhfq6rmdeuri" path="res://addons/dialogic/Modules/Text/node_dialog_text.gd" id="2_tsecs"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ihqcy"]
@@ -12,24 +13,42 @@ metadata/_custom_type_script = "uid://c8d470kti274h"
 [node name="Panel" type="Panel" parent="." unique_id=1125765662]
 self_modulate = Color(1, 1, 1, 0.5058824)
 anchors_preset = -1
-anchor_left = 0.2734375
+anchor_left = 0.34479168
 anchor_top = 0.058641974
-anchor_right = 0.7526042
+anchor_right = 0.68125
 anchor_bottom = 0.93950605
 theme_override_styles/panel = SubResource("StyleBoxEmpty_ihqcy")
 metadata/_edit_use_anchors_ = true
 
+[node name="blur_color_rect" type="ColorRect" parent="Panel" unique_id=1647398009]
+material = ExtResource("2_sx1gb")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="white_color_rect" type="ColorRect" parent="Panel/blur_color_rect" unique_id=264425983]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.4862745)
+
 [node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=148323722]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.13043478
-anchor_right = 0.8695652
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
-metadata/_edit_use_anchors_ = true
+theme_override_constants/margin_bottom = 10
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Panel/MarginContainer" unique_id=1128235594]
 unique_name_in_owner = true
