@@ -173,27 +173,29 @@ func add_message(text:String, speaker_name:String, _time:String) -> void:
 
 
 #region IMAGES
-func add_reaction(reaction, amount):
+func add_reaction(reaction, time, amount):
 	var message = message_list.get_child(-1)
 	var reaction_message: RichTextLabel = load(reaction_label).instantiate()
 	var extra_space = Control.new()
 	
-	reaction_message.text = reaction
 	message.set_meta('reaction', true)
-	await get_tree().create_timer(amount).timeout
+	message.set_meta('emoji', reaction)
+	await get_tree().create_timer(time).timeout
+	
+	reaction_message.text = reaction
 	
 	if message.get_child(0).has_meta('speaker'):
 		if message.get_child(0).get_meta('speaker') == "mc":
-			reaction_message.offset_transform_position = Vector2(35,22)
+			reaction_message.offset_transform_position = Vector2(43,22)
 			reaction_message.grow_horizontal = Control.GROW_DIRECTION_END
-			await get_tree().create_timer(randf_range(min_reaction_time, max_reaction_time)).timeout
+			#await get_tree().create_timer(randf_range(min_reaction_time, max_reaction_time)).timeout
 			message.add_child(reaction_message)
 			message.move_child(reaction_message, 0)
 			message_list.add_child(extra_space)
 	else:
-		reaction_message.offset_transform_position = Vector2(-37,22)
+		reaction_message.offset_transform_position = Vector2(-47,22)
 		reaction_message.grow_horizontal = Control.GROW_DIRECTION_BEGIN
-		await get_tree().create_timer(randf_range(min_reaction_time, max_reaction_time)).timeout
+		#await get_tree().create_timer(randf_range(min_reaction_time, max_reaction_time)).timeout
 		message.add_child(reaction_message)
 		message_list.add_child(extra_space)
 	
@@ -203,6 +205,11 @@ func add_reaction(reaction, amount):
 	message_list.move_child(extra_space, message.get_index()+1)
 	await get_tree().process_frame
 	scroll_container.ensure_control_visible(message_list.get_child(-1))
+	
+	if amount >= 2:
+		for i in range(1,amount+1, 1):
+			await get_tree().create_timer(1.0).timeout
+			reaction_message.text = reaction + str(i) + " "
 
 
 ## Adds an image message (a custom scene)

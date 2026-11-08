@@ -1,13 +1,14 @@
 n: This is the beginning of the timeline.
 [image_message speaker="n" image="res://images/group_message/cloud_study__stormy_sunset_1998.20.1.jpg"]
-[emoji_reaction emoji="💕" amount="7"]
+[emoji_reaction emoji="💕" time="2" amount="2"]
 mc: Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 n: Duis aute.
 mc: irure dolor in reprehenderit?
 n: in voluptate!
 mc: velit esse cillum dolore eu fugiat nulla pariatur.
-[emoji_reaction emoji="🔥" amount="0"]
+[emoji_reaction emoji="🔥" time="0" amount="1"]
 npc: Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam!
+[emoji_reaction emoji="❔" time="0" amount="3"]
 npc: eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
 n: This is the end of the timeline.
 [end_timeline]
