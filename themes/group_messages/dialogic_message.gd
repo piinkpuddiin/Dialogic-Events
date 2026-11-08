@@ -24,9 +24,8 @@ enum Alignments {LEFT, CENTER, RIGHT}
 @export var group_users: Dictionary[String, Color] = {
 	"npc": Color(0.875, 0.318, 0.318, 1.0),
 	"n": Color(0.279, 0.469, 1.0, 1.0),
-	"npc2": Color(0.835, 1.0, 0.051, 1.0),
 }
-@export var npc2_color: Color = Color(0.835, 1.0, 0.051, 1.0)
+@export var mc_color: Color = Color(0.227, 0.925, 0.922, 1.0)
 ## The space between messages when a different person speaks.
 @export var additional_message_space:= 14
 @export var min_reaction_time:= 0.1
@@ -131,7 +130,7 @@ func add_message(text:String, speaker_name:String, _time:String) -> void:
 				
 				if !previous_speaker == current_speaker:
 					var icon_profile = icon.get_node("TextureRect")
-					icon_profile.modulate = Color("bdff97ff")
+					icon_profile.modulate = mc_color
 					#print("This is the mc speaking, so the same speaker needs to be true to work")
 				elif previous_speaker == current_speaker:
 					icon.modulate = Color(0.0, 0.0, 0.0, 0.0)
@@ -201,16 +200,16 @@ func add_reaction(reaction, time, amount):
 	
 	extra_space.custom_minimum_size.y = 8
 	extra_space.name = "extra_space"
-	
 	message_list.move_child(extra_space, message.get_index()+1)
-	await get_tree().process_frame
-	scroll_container.ensure_control_visible(message_list.get_child(-1))
 	
 	if amount >= 2:
 		for i in range(1,amount+1, 1):
-			await get_tree().create_timer(1.0).timeout
+			# Randomize the time it takes for each new same emoji reaction
+			await get_tree().create_timer(randf_range(0.5,1.9)).timeout
 			reaction_message.text = reaction + str(i) + " "
 
+	await get_tree().process_frame
+	scroll_container.ensure_control_visible(message_list.get_child(-1))
 
 ## Adds an image message (a custom scene)
 func add_image_message(image:String, speaker:String) -> void:
@@ -240,7 +239,7 @@ func add_image_message(image:String, speaker:String) -> void:
 				
 				if !previous_speaker == current_speaker:
 					var icon_profile = icon.get_node("TextureRect")
-					icon_profile.modulate = Color("bdff97ff")
+					icon_profile.modulate = mc_color
 				elif previous_speaker == current_speaker:
 					icon.modulate = Color(0.0, 0.0, 0.0, 0.0)
 			_:

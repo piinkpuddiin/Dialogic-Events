@@ -10,5 +10,6 @@ mc: velit esse cillum dolore eu fugiat nulla pariatur.
 npc: Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam!
 [emoji_reaction emoji="❔" time="0" amount="3"]
 npc: eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+[emoji_reaction emoji="🤭" time="0" amount="1"]
 n: This is the end of the timeline.
 [end_timeline]

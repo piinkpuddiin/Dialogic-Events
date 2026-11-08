@@ -8,6 +8,11 @@
 
 [node name="DialogicLayoutLayer_MessageChat" type="Node" unique_id=2247279]
 script = ExtResource("1_brhxs")
+group_users = Dictionary[String, Color]({
+"n": Color(0.8416027, 0.0067435033, 0.82518685, 1),
+"npc": Color(0.54653955, 0.77727985, 0.9729671, 1)
+})
+mc_color = Color(0.8352941, 0.14901961, 0.20784314, 1)
 metadata/_custom_type_script = "uid://c8d470kti274h"
 
 [node name="Panel" type="Panel" parent="." unique_id=1125765662]
