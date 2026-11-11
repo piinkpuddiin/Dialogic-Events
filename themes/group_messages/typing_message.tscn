@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://ds3i54j4ol6t4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a5s7f"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.03529412, 0.03529412, 0.03529412, 0.8156863)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.05214367, 6.519912e-05, 0.15311119, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="RichTextLabel" type="RichTextLabel" unique_id=492510211]
+custom_minimum_size = Vector2(65, 30)
+offset_right = 45.0
+offset_bottom = 30.0
+theme_override_font_sizes/normal_font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_a5s7f")
+text = "•   •   •"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1

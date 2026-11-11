@@ -15,7 +15,8 @@ enum Alignments {LEFT, CENTER, RIGHT}
 @export_category("Scenes")
 @export_file('*.extension') var message_scene: String = "res://themes/group_messages/new_message_group_chat.tscn"
 @export_file('*.extension') var message_icon: String = "res://scenes/group_messages/user_icon.tscn"
-#@export_file('*.extension') var user_icon: String = "res://gui/icons/profiles/pinkicon.png"
+var curr_typing_message:= "res://themes/group_messages/typing_message.tscn"
+#res://themes/group_messages/typing_message.tscn
 @export_file('*.extension') var image_message: String = "res://scenes/group_messages/image_message.tscn"
 @export_file('*.extension') var reaction_label: String = "res://scenes/group_messages/emoji_reaction.tscn"
 
@@ -44,10 +45,39 @@ var new_message:= false
 func _ready() -> void:
 	GlobalVar.new_image_message.connect(add_image_message)
 	GlobalVar.emoji_react.connect(add_reaction)
+	Dialogic.Text.text_finished.connect(currently_typing)
+	Dialogic.Text.about_to_show_text.connect(remove_typing)
 
 func _apply_export_overrides() -> void:
 	if !is_inside_tree():
 		await ready
+
+func currently_typing(_info) -> void:
+	var x:= 0
+	var next_speaker: String
+	
+	for i in Dialogic.current_timeline_events:
+		x += 1
+		
+		# We have reached the end of the cureent timeline array. We break out of the loop.
+		if Dialogic.current_event_idx + x >= Dialogic.current_timeline_events.size():
+			break
+		
+		if Dialogic.current_timeline_events[Dialogic.current_event_idx+x] is DialogicTextEvent:
+			print_rich("[b]the next event: ", Dialogic.current_timeline_events[Dialogic.current_event_idx+x])
+			print("we are at x: ", x)
+			next_speaker = Dialogic.current_timeline_events[Dialogic.current_event_idx+x].character_identifier
+			break
+	
+	print(next_speaker)
+	if next_speaker != "mc" and next_speaker != "":
+		var bubble_message: RichTextLabel = load("res://themes/group_messages/typing_message.tscn").instantiate()
+		bubble_message.text = next_speaker + " " + "•   •   •"
+		%typing_hbox.add_child(bubble_message)
+
+func remove_typing(_info: Dictionary = {}) -> void:
+	for i in %typing_hbox.get_children():
+		i.queue_free()
 
 func _add_space():
 	var message_space: Control = Control.new()
