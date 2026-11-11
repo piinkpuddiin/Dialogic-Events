@@ -35,10 +35,10 @@ directories/dch_directory={
 "npc": "res://characters/npc.dch"
 }
 directories/dtl_directory={
-"group_chat_timeline": "res://dialogue/group_message_timeline.dtl",
+"group_message_timeline": "res://dialogue/group_message_timeline.dtl",
 "next_page_timeline": "res://dialogue/next_page_timeline.dtl",
 "story_progress_timeline": "res://dialogue/story_progress_timeline.dtl",
-"update_identifier_timeline": "res://dialogue/update_id_timeline.dtl"
+"update_id_timeline": "res://dialogue/update_id_timeline.dtl"
 }
 layout/style_directory={
 "": "res://themes/simple/simple.tres",
