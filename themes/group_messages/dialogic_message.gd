@@ -42,6 +42,10 @@ var last_text_time := ""
 var new_message:= false
 
 
+# TODO: Make the currently typing show the typer icon
+# TODO: Make the player text into a choice button to click
+# TODO: Add a phone overlay. Make it smexy and 3D
+
 func _ready() -> void:
 	GlobalVar.new_image_message.connect(add_image_message)
 	GlobalVar.emoji_react.connect(add_reaction)
