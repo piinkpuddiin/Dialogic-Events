@@ -145,7 +145,7 @@ func add_message(text:String, speaker_name:String, _time:String) -> void:
 	hbox.add_child(icon)
 	message_list.add_child(hbox)
 	audio_stream_player.play()
-	#ATTENTION: always adjust depending on how many items there are in list
+	#WARNING: always adjust depending on how many items there are in list
 	message_list.move_child(hbox, get_index()-1) 
 	
 	hbox.size.x = 350

@@ -50,7 +50,8 @@ func add_message(_text:String) -> void:
 			break
 	
 	text_node.bbcode_enabled = true
-	text_node.custom_minimum_size = Vector2(300, smallest_line_amount * string_size.y) # ATTENTION
+	# WARNING
+	text_node.custom_minimum_size = Vector2(300, smallest_line_amount * string_size.y) 
 	text_node.text = _text
 	text_node.add_theme_font_size_override("normal_font_size", 32)
 	
